@@ -12,7 +12,7 @@
       background: #fefefe;
     }
     header {
-      background: #fff;
+      background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
       padding: 20px;
       display: flex;
       justify-content: space-between;
@@ -22,7 +22,7 @@
     nav a {
       margin: 0 15px;
       text-decoration: none;
-      color: #333;
+      color: #fff;
       font-weight: bold;
     }
     .hero {
@@ -69,12 +69,27 @@
       padding: 20px;
       font-size: 0.9em;
     }
+    .dropdown {
+      width: 80%;
+      margin: 20px auto;
+    }
+    details {
+      margin-bottom: 10px;
+      background: #f9f9f9;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 10px;
+    }
+    summary {
+      font-weight: bold;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
 
 <header>
-  <div><strong>DC <span style="color: #f15bb5;">GAYMERS</span></strong></div>
+  <div><strong>DC <span style="color: #fefefe;">GAYMERS</span></strong></div>
   <nav>
     <a href="#events">Events</a>
     <a href="#about">About</a>
@@ -89,6 +104,25 @@
   <h1>Welcome to DC Gaymers</h1>
   <p>A queer community for tabletop and video game enthusiasts in Washington, D.C.</p>
   <a href="#about" class="btn">Learn More</a>
+</section>
+
+<section class="dropdown">
+  <details>
+    <summary>Calendar</summary>
+    <table>
+      <tr><th>Date</th><th>Event</th></tr>
+      <tr><td>Apr 27</td><td>Board Game Night</td></tr>
+      <tr><td>May 5</td><td>RPG One-Shot</td></tr>
+    </table>
+  </details>
+  <details>
+    <summary>About Us</summary>
+    <p>DC Gaymers is a welcoming space for LGBTQ+ tabletop and video game fans. Our mission is to build a community where everyone can game and socialize in a supportive environment.</p>
+  </details>
+  <details>
+    <summary>Opportunities</summary>
+    <p>Looking to get involved? We offer volunteer roles, event planning opportunities, and partnerships with local organizations. Join us and make a difference!</p>
+  </details>
 </section>
 
 <section class="section" id="events">
