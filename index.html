@@ -35,25 +35,20 @@
       font-size: 2.5em;
     }
     .section {
-      display: flex;
-      flex-wrap: wrap;
       padding: 40px 20px;
-      justify-content: center;
-      gap: 20px;
     }
     .card {
       background: #fff;
       padding: 20px;
       border-radius: 8px;
-      width: 280px;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      text-align: center;
+      margin-bottom: 20px;
     }
     .card h2 {
-      font-size: 1.2em;
+      font-size: 1.5em;
       margin-bottom: 10px;
     }
-    .btn {
+    .btn, summary {
       display: inline-block;
       margin-top: 10px;
       padding: 10px 20px;
@@ -61,6 +56,18 @@
       color: #fff;
       border-radius: 5px;
       text-decoration: none;
+      cursor: pointer;
+    }
+    details {
+      margin-bottom: 10px;
+    }
+    details[open] summary::after {
+      content: "\2212";
+      float: right;
+    }
+    summary::after {
+      content: "\002B";
+      float: right;
     }
     footer {
       background: #333;
@@ -69,32 +76,33 @@
       padding: 20px;
       font-size: 0.9em;
     }
-    .dropdown {
-      width: 80%;
-      margin: 20px auto;
-    }
-    details {
-      margin-bottom: 10px;
-      background: #f9f9f9;
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
       border: 1px solid #ccc;
       border-radius: 5px;
-      padding: 10px;
     }
-    summary {
-      font-weight: bold;
+    form button {
+      padding: 10px 20px;
+      background: #0056b3;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
       cursor: pointer;
+    }
+    form button:hover {
+      background: #003f7f;
     }
   </style>
 </head>
 <body>
 
 <header>
-  <div><strong>DC <span style="color: #fefefe;">GAYMERS</span></strong></div>
+  <div><strong><span style="color: #fefefe;">DC GAYMERS</span></strong></div>
   <nav>
     <a href="#events">Events</a>
     <a href="#about">About</a>
-    <a href="#membership">Membership</a>
-    <a href="#board">Board Bios</a>
     <a href="#opportunities">Opportunities</a>
     <a href="#contact">Contact</a>
   </nav>
@@ -103,74 +111,74 @@
 <section class="hero">
   <h1>Welcome to DC Gaymers</h1>
   <p>A queer community for tabletop and video game enthusiasts in Washington, D.C.</p>
-  <a href="#about" class="btn">Learn More</a>
 </section>
 
-<section class="dropdown">
-  <details>
-    <summary>Calendar</summary>
-    <table>
-      <tr><th>Date</th><th>Event</th></tr>
-      <tr><td>Apr 27</td><td>Board Game Night</td></tr>
-      <tr><td>May 5</td><td>RPG One-Shot</td></tr>
-    </table>
-  </details>
-  <details>
-    <summary>About Us</summary>
-    <p>DC Gaymers is a welcoming space for LGBTQ+ tabletop and video game fans. Our mission is to build a community where everyone can game and socialize in a supportive environment.</p>
-  </details>
-  <details>
-    <summary>Opportunities</summary>
-    <p>Looking to get involved? We offer volunteer roles, event planning opportunities, and partnerships with local organizations. Join us and make a difference!</p>
-  </details>
-</section>
-
-<!-- <section class="section" id="events">
+<section id="events" class="section">
   <div class="card">
     <h2>Upcoming Events</h2>
-    <p>Apr 27: Board Game Night<br>May 5: RPG One-Shot</p>
-    <a href="#" class="btn">View All Events</a>
-  </div>
-  <div class="card">
-    <h2>About Us</h2>
-    <p>Get to know more about our group and our mission.</p>
-    <a href="#" class="btn">Read More</a>
-  </div>
-  <div class="card">
-    <h2>Become a Member</h2>
-    <p>Learn about the benefits of joining DC Gaymers.</p>
-    <a href="#" class="btn">Join Now</a>
-  </div>
-  <div class="card">
-    <h2>Event Proposals</h2>
-    <p>Submit your idea for an upcoming event.</p>
-    <a href="#" class="btn">Submit</a>
-  </div>
-  <div class="card">
-    <h2>Latest News</h2>
-    <p>Gaming at a Local Cafe Recap<br>April 15, 2024</p>
-    <a href="#" class="btn">Read More</a>
+    <details>
+      <summary>Apr 27: Board Game Night at As You Are Bar</summary>
+      <p>Join us for a night of board games at As You Are Bar. All levels welcome. Games provided, or bring your own!</p>
+    </details>
+    <details>
+      <summary>May 5: RPG One-Shot - Dungeons & Dragons 5E</summary>
+      <p>Come roll some dice in a one-shot D&D adventure! Beginners and veterans alike are welcome.</p>
+    </details>
+    <details>
+      <summary>May 18: Monthly Social + Drag Show</summary>
+      <p>Enjoy our monthly social featuring a drag show, games, and great company. Open to all LGBTQ+ gamers and allies!</p>
+    </details>
   </div>
 </section>
 
-<section class="section" id="board">
+<section id="about" class="section">
   <div class="card">
-    <h2>Board Bios</h2>
-    <p>Meet our leadership team and learn more about the faces behind DC Gaymers.</p>
-    <a href="#" class="btn">See the Board</a>
+    <h2>About DC Gaymers</h2>
+    <p>DC Gaymers is a vibrant LGBTQ+ gaming community based in Washington, D.C. We organize regular events like board game nights, RPG one-shots, tournaments, and socials that provide safe, inclusive spaces for queer gamers to meet, play, and connect. Open to all experience levels and identities, we believe gaming brings people together!</p>
+    <h3>Board Members</h3>
+    <div>
+      <img src="profile1.jpg" alt="Board Member 1" style="width:100px; height:100px; border-radius:50%;"><br>
+      <strong>Robin Spahn</strong>
+      <p>President — Lifelong gamer and community builder passionate about inclusivity.</p>
+    </div>
+    <div>
+      <img src="profile2.jpg" alt="Board Member 2" style="width:100px; height:100px; border-radius:50%;"><br>
+      <strong>Alex Rivera</strong>
+      <p>Vice President — Tabletop RPG lover and organizer extraordinaire.</p>
+    </div>
+    <div>
+      <img src="profile3.jpg" alt="Board Member 3" style="width:100px; height:100px; border-radius:50%;"><br>
+      <strong>Sam Lee</strong>
+      <p>Treasurer — Dedicated to keeping our community growing and thriving!</p>
+    </div>
   </div>
 </section>
 
-<section class="section" id="opportunities">
+<section id="opportunities" class="section">
   <div class="card">
     <h2>Opportunities</h2>
-    <p>Learn how you can get involved with DC Gaymers, volunteer, or partner with us.</p>
-    <a href="#" class="btn">Get Involved</a>
+    <ul>
+      <li>Volunteer at our monthly board game nights.</li>
+      <li>Join the Event Planning Committee and help organize upcoming events.</li>
+      <li>Submit an event proposal for a game night, tournament, or social!</li>
+    </ul>
   </div>
-</section> -->
+</section>
 
-<footer id="contact">
-  <p>Contact us at <a href="mailto:info@dcgaymers.org" style="color: #f15bb5;">info@dcgaymers.dev</a></p>
+<section id="contact" class="section">
+  <div class="card">
+    <h2>Contact Us</h2>
+    <form action="mailto:info@dcgaymers.org" method="post" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <p>Contact us at <a href="mailto:info@dcgaymers.org" style="color: #f15bb5;">info@dcgaymers.org</a></p>
 </footer>
 
 </body>
